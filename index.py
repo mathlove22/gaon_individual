@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # 데이터 로드
-data = pd.read_csv('data.csv', encoding='utf-8')
+data = pd.read_csv('data.csv', encoding='euc-KR')
 
 # student_id를 문자열로 변환
 data['student_id'] = data['student_id'].astype(str)
