@@ -46,9 +46,11 @@ if not st.session_state.logged_in:
             student = login(student_id, password)
             if student is not None:
                 st.success("로그인 성공!")
+                st.rerun()  # 즉시 페이지 새로고침
             else:
                 st.error("ID 또는 비밀번호가 잘못되었습니다.")
-else:
+
+if st.session_state.logged_in:
     # 학생 정보 및 비밀번호 변경 섹션
     student = data[data['student_id'] == st.session_state.student_id].iloc[0]
     st.write(f"학생 이름 : {student['name']}")
@@ -73,4 +75,4 @@ else:
     if st.button("로그아웃"):
         st.session_state.logged_in = False
         st.session_state.student_id = None
-        st.experimental_rerun()
+        st.rerun()  # st.experimental_rerun() 대신 st.rerun() 사용
