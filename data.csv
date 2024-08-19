@@ -1,0 +1,4 @@
+student_id,password,name,evaluation_1,evaluation_1_score,evaluation_2,evaluation_2_score,evaluation_3,evaluation_3_score,evaluation_4,evaluation_4_score,description
+1001,password123,John Doe,Math,85,English,90,Science,88,History,92,John has shown great improvement.
+1002,secret456,Jane Doe,Math,78,English,83,Science,89,History,87,Jane consistently performs well.
+1003,my_pass789,Jim Beam,Math,92,English,88,Science,91,History,95,Jim excels in all subjects.
