@@ -15,7 +15,6 @@ if st.button("로그인"):
 
     if not student.empty:
         # 학생의 평가 결과 출력
-        st.write(f"학생 이름: {student['name'].values[0]}")
         st.write(f"학생 이름 : {student['name'].values[0]}")
         st.write(f"{student['evaluation_1'].values[0]} - 점수: {student['evaluation_1_score'].values[0]}")
         st.write(f"{student['evaluation_2'].values[0]} - 점수: {student['evaluation_2_score'].values[0]}")
