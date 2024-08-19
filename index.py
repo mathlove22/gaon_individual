@@ -17,12 +17,16 @@ if st.button("로그인"):
     # 입력한 ID와 비밀번호에 해당하는 학생 검색
     student = data[(data['student_id'] == student_id) & (data['password'] == password)]
 
-    if not student.empty:
-        # 학생의 평가 결과 출력
-        st.write(f"학생 이름 : {student['name'].values[0]}")
-        st.write(f"{student['evaluation_1'].values[0]} - 점수: {student['evaluation_1_score'].values[0]}")
-        # ... (다른 평가 항목 출력)
-        st.write(f"참고사항 : {student['description'].values[0]}")
+    if not student.empty:
+        # 학생의 평가 결과 출력
+        st.write(f"학생 이름 : {student['name'].values[0]}")
+        st.write(f"{student['evaluation_1'].values[0]} - 점수: {student['evaluation_1_score'].values[0]}")
+        st.write(f"{student['evaluation_2'].values[0]} - 점수: {student['evaluation_2_score'].values[0]}")
+        st.write(f"{student['evaluation_3'].values[0]} - 점수: {student['evaluation_3_score'].values[0]}")
+        st.write(f"{student['evaluation_4'].values[0]} - 점수: {student['evaluation_4_score'].values[0]}")
+        st.write(f"참고사항 : {student['description'].values[0]}")
+    else:
+        st.error("ID 또는 비밀번호가 잘못되었습니다.")
 
         # 비밀번호 변경 버튼 추가
         new_password = st.text_input("새로운 비밀번호를 입력하세요:", type="password")
