@@ -4,7 +4,7 @@ from google.oauth2.service_account import Credentials
 import pandas as pd
 
 # 페이지 설정
-st.set_page_config(page_title="자율/진로/개인/종합사항 초안", layout="wide")
+st.set_page_config(page_title="정보 세부특기사항 초안", layout="wide")
 
 # CSS - 최소한의 스타일만 적용
 st.markdown("""
