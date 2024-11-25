@@ -23,7 +23,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # 메인 앱
-st.title("자율/진로/개인/종합사항 초안")
+st.title("정보 세부특기사항 초안")
 
 # 데이터 로드
 def get_google_credentials():
@@ -116,7 +116,12 @@ else:
     # 자율활동
     st.subheader("🎯 자율활동")
     st.text(f"현재 Byte 수: {student['A']}/1500")
-    st.text_area("기록:", value=student['B','C','D'], height=400, label_visibility="collapsed")
+    records = f"""
+B: {student['B']}
+C: {student['C']}
+D: {student['D']}
+"""
+    st.text_area("기록:", value=records, height=400, label_visibility="collapsed")
        
     st.markdown("---")
     
