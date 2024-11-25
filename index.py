@@ -116,11 +116,7 @@ else:
     # 자율활동
     st.subheader("🎯 자율활동")
     st.text(f"현재 Byte 수: {student['A']}/1500")
-    records = f"""
-B: {student['B']}
-C: {student['C']}
-D: {student['D']}
-"""
+    records = f"{student['B']}\n{student['C']}\n{student['D']}"
     st.text_area("기록:", value=records, height=400, label_visibility="collapsed")
        
     st.markdown("---")
