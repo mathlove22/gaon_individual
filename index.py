@@ -106,6 +106,8 @@ if not st.session_state.logged_in:
         
         if submit_button:
             if login(student_id, password, df):
+                load_sheet_data.clear()  # 캐시를 무효화
+                df = load_sheet_data()  # 데이터를 새로 로드
                 st.success("로그인 성공!")
                 st.experimental_rerun()
             else:
@@ -131,6 +133,7 @@ else:
         if st.button("로그아웃"):
             st.session_state.logged_in = False
             st.session_state.student_id = None
+            load_sheet_data.clear()  # 캐시 무효화
             st.experimental_rerun()
     
     with col2:
