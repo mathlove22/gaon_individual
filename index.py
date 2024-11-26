@@ -65,10 +65,14 @@ def update_password(student_id, new_password):
         df = pd.DataFrame(sheet.get_all_records())
         data_index = df[df['ID'] == student_id].index[0]
         sheet.update_cell(data_index + 2, df.columns.get_loc('Password') + 1, new_password)
+        
+        # 캐시 무효화
+        load_sheet_data.clear()
         return True
     except Exception as e:
         st.error(f"비밀번호 업데이트 중 오류가 발생했습니다: {str(e)}")
         return False
+
 
 def login(student_id, password, df):
     if df is None:
