@@ -114,7 +114,6 @@ else:
     st.header(f"학생 이름: {student['Name']}")
 
     # 자율활동
-    st.subheader("🎯 자율활동")
     st.text(f"현재 Byte 수: {student['A']}/1500")
     records = f"{student['B']}\n{student['C']}\n{student['D']}"
     st.text_area("기록:", value=records, height=400, label_visibility="collapsed")
